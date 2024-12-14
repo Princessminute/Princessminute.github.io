@@ -1,0 +1,247 @@
+/* Estilo general para el fondo */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    background-image: url('BACK.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    color: #b9efef;
+    text-align: center;
+    overflow: hidden; /* Evita barras de desplazamiento */
+    box-sizing: border-box;
+}
+
+/* Contenedor principal del juego */
+#game-screen {
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Ocupa toda la altura del viewport */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 1200px; /* Limita el ancho en pantallas grandes */
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Asegura que esté centrado horizontalmente */
+}
+
+/* Pantallas activas y de fondo */
+.screen {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex; /* Flex para centrar contenido */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Asegura que ocupe toda la altura */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.active {
+    display: flex;
+    opacity: 1;
+}
+
+
+/* Botones */
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px;
+    align-self: center; /* Asegura que los botones estén centrados */
+}
+
+button:hover {
+    background: linear-gradient(to right, #6e8cc0, #8fbbd4);
+}
+
+
+
+/* Estilo de los botones de selección de jugador */
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+    margin-top: 20px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+/* Temporizador y puntuación */
+.timer, .score {
+    margin: 10px;
+    font-size: 20px;
+}
+
+/* Estilo para la lista de compuestos */
+.compounds {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compounds div {
+    padding: 10px;
+    margin: 5px;
+    background-color: #3b9eb2;
+    border: 1px solid #91c4d5;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+/* Categorías de compuestos */
+.classifications {
+    display: flex;
+    justify-content: space-between; /* Espaciado uniforme */
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: nowrap; /* Impide que las categorías se envuelvan */
+    gap: 10px; /* Espacio entre categorías */
+}
+
+.category {
+    flex: 1 0 calc(16.66% - 10px); /* Divide el espacio en 6 categorías */
+    max-width: calc(16.66% - 10px); /* Limita el ancho máximo */
+    height: 200px;
+    border: 2px dashed #abdde6;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: #5cbeb1;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category:hover {
+    background-color: #e0f7fa;
+}
+
+.category .compound {
+    margin: 5px;
+    background-color: #bae7ff;
+    border: 1px solid #69c0ff;
+    border-radius: 5px;
+}
+
+/* Estilo para los títulos */
+h2, h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botón para verificar resultados */
+#check-results {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: center;  /* Asegura que el botón esté centrado */
+}
+
+#check-results:hover {
+    background: linear-gradient(to right, #6e8cc0, #8fbbd4);
+}
+
+/* Pantalla de resultados */
+#result-screen {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón de reiniciar */
+#restart-btn {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(172, 235, 232);
+    cursor: pointer;
+}
+
+#restart-btn:hover {
+    background: linear-gradient(to right, #6e8cc0, #8fbbd4);
+}
+
+/* Compuestos mejorados con color celeste oscuro */
+.compound {
+    padding: 10px;
+    border: 1px solid #4c8bf5;
+    background-color: #4c8bf5;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.compound:hover {
+    background-color: #3578d7;
+    transform: scale(1.05);
+}
+
+/* Estilo para el contenedor de compuestos */
+#compound-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin: 20px 0;
+}
+
+/* Para dispositivos pequeños */
+@media (max-width: 768px) {
+    .player-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .compound {
+        width: 100%;
+    }
+
+    .category {
+        width: 100%; /* Las categorías ocuparán todo el ancho disponible */
+    }
+
+    #game-screen {
+        height: auto; /* Permite que el contenedor se ajuste dinámicamente */
+        padding: 10px;
+    }
+
+    .classifications {
+        flex-direction: column; /* Las categorías se apilan verticalmente en pantallas pequeñas */
+    }
+}
+
+/* Ocultar todas las pantallas por defecto */
+.screen {
+    display: none;
+}
+
+/* Mostrar solo la pantalla activa */
+.screen.active {
+    display: block;
+}
