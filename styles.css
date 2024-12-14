@@ -1,0 +1,189 @@
+/* Estilo general para el fondo */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('BACK.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #b9efef;
+    text-align: center; /* Asegura que el texto dentro del body esté centrado */
+}
+
+/* Contenedor principal del juego */
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%; /* Controla el tamaño del área central */
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho para pantallas grandes */
+}
+
+/* Pantallas activas y de fondo */
+.screen {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex; /* Flex para centrar contenido en las pantallas */
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Estilo de los botones de selección de jugador */
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+}
+
+/* Botones */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px; /* Añadir espacio entre los botones */
+}
+
+button:hover {
+    background: linear-gradient(to right, #6e8cc0, #8fbbd4);
+}
+
+/* Temporizador y puntuación */
+.timer, .score {
+    margin: 10px;
+    font-size: 20px;
+}
+
+/* Estilo para la lista de compuestos */
+.compounds {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.compounds div {
+    padding: 10px;
+    margin: 5px;
+    background-color: #3b9eb2;
+    border: 1px solid #91c4d5;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+/* Categorías de compuestos */
+.classifications {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que las categorías se ajusten en pantallas pequeñas */
+}
+
+.category {
+    width: 150px;
+    height: 200px;
+    border: 2px dashed #abdde6;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: #5cbeb1;
+    transition: background-color 0.3s ease;
+}
+
+.category:hover {
+    background-color: #e0f7fa;
+}
+
+.category .compound {
+    margin: 5px;
+    background-color: #bae7ff;
+    border: 1px solid #69c0ff;
+    border-radius: 5px;
+}
+
+/* Estilo para los títulos */
+h2, h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Botón para verificar resultados */
+#check-results {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: center;  /* Asegura que el botón esté centrado */
+}
+
+#check-results:hover {
+    background: linear-gradient(to right, #6e8cc0, #8fbbd4);
+}
+
+/* Pantalla de resultados */
+#result-screen {
+    text-align: center;
+}
+
+#restart-btn {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(172, 235, 232);
+    cursor: pointer;
+}
+
+#restart-btn:hover {
+    background: linear-gradient(to right, #6e8cc0, #8fbbd4);
+}
+
+#compound-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin: 20px 0;
+}
+
+/* Compuestos mejorados con color celeste oscuro */
+.compound {
+    padding: 10px;
+    border: 1px solid #4c8bf5;
+    background-color: #4c8bf5;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.compound:hover {
+    background-color: #3578d7;
+    transform: scale(1.05);
+}
