@@ -243,24 +243,7 @@ document.getElementById("pass-turn").addEventListener("click", () => {
 });
 
 
-// Mostrar resultados finales
-function showResults() {
-    clearInterval(timerInterval);
-    document.getElementById("result-screen").classList.add("active");
-    document.getElementById("game-screen").classList.remove("active");
 
-    document.getElementById("final-score").textContent = `Puntaje Final: Jugador 1: ${scores[1]} | Jugador 2: ${scores[2]}`;
-
-    const winner = scores[1] > scores[2] ? "Jugador 1" : scores[1] < scores[2] ? "Jugador 2" : "Empate";
-    const winnerMessage = document.createElement("h3");
-    winnerMessage.textContent = `¡El ganador es: ${winner}!`;
-    document.getElementById("result-screen").appendChild(winnerMessage);
-
-    const resultSummary = document.createElement("div");
-    resultSummary.innerHTML = `<p>Jugador 1: ${playerResults[1].correct} Correctos</p>
-    <p>Jugador 2: ${playerResults[2].correct} Correctos</p>`;
-    document.getElementById("result-screen").appendChild(resultSummary);
-}
 
 
 
